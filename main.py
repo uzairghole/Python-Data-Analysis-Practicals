@@ -146,3 +146,132 @@ plt.grid(True, linestyle=":", alpha=0.6)
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+
+# ==========================================
+# . DATA SCIENCE AND MACHING LEARNING
+# ==========================================
+
+import pandas as pd
+data = {
+    "Product": ["A", "B", "A", "C"],
+    "Sales": [100, 200, 150, 120]
+}
+df = pd.DataFrame(data)
+print(df)
+print("Total sales:", df["Sales"].sum())
+
+
+lifecycle = [
+    "Problem Definition",
+    "Data Collection",
+    "Data Cleaning",
+    "EDA",
+    "Modeling",
+    "Evaluation",
+    "Deployment",
+    "Monitoring"
+]
+for step in lifecycle:
+    print(step)
+
+
+from sklearn.linear_model import LinearRegression
+X = [[500], [800], [1000], [1200]]
+y = [100000, 160000, 200000, 240000]
+model = LinearRegression()
+model.fit(X, y)
+prediction = model.predict([[900]])
+print("Predicted price:", prediction[0])
+
+
+from sklearn.linear_model import LinearRegression
+X = [[1], [2], [3]]
+y = [2, 4, 6]
+model = LinearRegression()
+model.fit(X, y)
+print(model.predict([[4]]))
+
+
+from sklearn.cluster import KMeans
+X = [[1, 1], [1, 2], [8, 8], [9, 8]]
+clusters = KMeans(n_clusters=2, random_state=42, n_init=10)
+clusters.fit(X)
+print(clusters.labels_)
+
+
+applications = {
+    "Healthcare": "Disease-risk prediction",
+    "Finance": "Fraud detection",
+    "Retail": "Recommendation systems",
+    "Education": "Personalized learning",
+    "Transport": "Route and traffic prediction"
+}
+for field, example in applications.items():
+    print(field, ":", example)
+
+
+import pandas as pd
+df = pd.DataFrame({
+    "Area": [500, 800, 1000],
+    "Bedrooms": [1, 2, 3],
+    "Price": [100000, 160000, 200000]
+})
+X = df[["Area", "Bedrooms"]]
+y = df["Price"]
+print("Features:")
+print(X)
+print("Label:")
+print(y)
+
+
+from sklearn.model_selection import train_test_split
+X = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]]
+y = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+print("Training rows:", len(X_train))
+print("Testing rows:", len(X_test))
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+data = {
+    "Age": [18, 19, 20, 18, 21, 22, 19, 20, 21, 22],
+    "StudyHours": [2, 3, 4, 5, 6, 7, 3, 5, 6, 8],
+    "Attendance": [70, 75, 80, 85, 90, 95, 72, 88, 92, 96],
+    "Gender": [0, 1, 0, 1, 0, 1, 1, 0, 1, 0],
+    "Marks": [45, 52, 60, 68, 75, 85, 50, 72, 80, 90]
+}
+
+df = pd.DataFrame(data)
+
+X = df[["Age", "StudyHours", "Attendance", "Gender"]]
+y = df["Marks"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print("Features:")
+print(X)
+print("Label:")
+print(y)
+print("Training rows:", len(X_train))
+print("Testing rows:", len(X_test))
+print("Predicted Marks:")
+print(y_pred)
+print("Mean Squared Error:", mse)
+print("R2 Score:", r2)
