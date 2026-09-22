@@ -1,14 +1,14 @@
-# 🐍 Python Data Analysis
+# 🐍 Python Data Science & Machine Learning
 
-<h1 align="center">Python Data Analysis</h1>
+<h1 align="center">Python Data Science & Machine Learning</h1>
 
 <p align="center">
-  <b>NumPy • Pandas • Matplotlib • Seaborn</b>
+  <b>NumPy • Pandas • Matplotlib • Seaborn • Scikit-learn</b>
 </p>
 
 <p align="center">
-  A practical Python project covering array operations, data analysis,
-  data cleaning, and data visualization.
+  A practical Python project covering NumPy, Pandas, data cleaning,
+  data analysis, visualization, and basic machine learning.
 </p>
 
 <p align="center">
@@ -18,6 +18,7 @@
 ![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge\&logo=pandas\&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557C?style=for-the-badge\&logo=python\&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-0.13+-4C72B0?style=for-the-badge)
+![Scikit--learn](https://img.shields.io/badge/Scikit--learn-ML-F7931E?style=for-the-badge\&logo=scikit-learn\&logoColor=white)
 
 </p>
 
@@ -25,9 +26,11 @@
 
 # 📌 About
 
-This repository contains my practical learning and implementation of **Python Data Analysis**.
+This repository contains my practical learning and implementation of **Python Data Science and Machine Learning** concepts.
 
-The project combines multiple concepts into one complete Python program, including:
+The project covers the complete beginner-level workflow from working with arrays and DataFrames to data cleaning, visualization, and basic machine learning models.
+
+### Topics Included
 
 * 🔢 NumPy
 * 🐼 Pandas
@@ -35,8 +38,12 @@ The project combines multiple concepts into one complete Python program, includi
 * 📊 Data Analysis
 * 📈 Data Visualization
 * 📂 CSV Dataset Handling
-
-The main goal is to move from individual Python concepts to a practical **data analysis workflow**.
+* 📉 Linear Regression
+* 🔵 K-Means Clustering
+* 🧪 Train-Test Split
+* 🎯 Features and Labels
+* 📏 Model Evaluation
+* 🤖 Machine Learning Fundamentals
 
 ---
 
@@ -55,16 +62,24 @@ Pandas
 Data Cleaning
    │
    ▼
-Data Visualization
+Data Analysis
    │
    ▼
-Data Analysis
+Data Visualization
    │
    ▼
 Exploratory Data Analysis
    │
    ▼
 Machine Learning
+   │
+   ├── Linear Regression
+   │
+   ├── K-Means Clustering
+   │
+   ├── Train-Test Split
+   │
+   └── Model Evaluation
    │
    ▼
 Data Science
@@ -84,289 +99,104 @@ Data Science
 * 2D array operations
 * Boolean masking
 * Fancy indexing
+* `arange()`
+* `linspace()`
+* Mathematical functions
 
 ## 🐼 Pandas Practice
 
 * DataFrame creation
-* Filtering
-* Sorting
+* Data filtering
+* Data sorting
 * Creating new columns
 * GroupBy
 * Aggregation
-* Renaming columns
+* Column renaming
+* CSV file handling
 
-## 🧹 Data Cleaning
+## 🧹 Data Cleaning & Analysis
 
-* CSV file loading
-* Column name standardization
+* Loading CSV datasets
+* Standardizing column names
 * Dataset inspection
 * Statistical summary
 * Missing-value detection
 * Duplicate detection
-* Column removal
+* Removing unnecessary columns
 * Conditional data cleaning
+* Basic data analysis
 
-## 📊 Visualization
+## 📊 Data Visualization
 
 * Histogram
+* Exam score distribution
 * Mean line
-* Sine graph
-* Cosine graph
-* Grid and legend
-* Chart customization
+* Line plots
+* Sine function
+* Cosine function
+* Grid
+* Labels
+* Legends
+
+## 🤖 Machine Learning
+
+* Data Science lifecycle
+* Features and labels
+* Train-test split
+* Linear Regression
+* Prediction
+* K-Means Clustering
+* Model fitting
+* Mean Squared Error
+* R² Score
 
 ---
 
-# 💻 Complete Program
+# 🔬 Machine Learning Examples
 
-```python
-import os
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+### Linear Regression
 
+The project includes simple Linear Regression examples for:
 
-# ==========================================
-# 1. NUMPY BASE PRACTICE
-# ==========================================
+* House price prediction
+* Basic numerical prediction
+* Student marks prediction
 
-# Creating arrays
-a = np.array([1, 2, 3, 4, 5])
-b = np.zeros((3, 3))
-c = np.ones((2, 4))
-d = np.arange(0, 10, 2)
-e = np.linspace(0, 1, 5)
+### K-Means Clustering
 
-# Array properties
-print("Array A properties:", a.shape, a.dtype, a.ndim)
+A basic K-Means example is included to understand how data points can be grouped into clusters.
 
-# Reshaping
-matrix = np.arange(12).reshape(3, 4)
-print("\nReshaped Matrix:\n", matrix)
+### Model Evaluation
 
-# Indexing & Slicing
-arr = np.array([10, 20, 30, 40, 50])
+The student marks prediction example uses:
 
-print("\nFirst & Last:", arr[0], arr[-1])
-print("Slice [1:4]:", arr[1:4])
+* Mean Squared Error (MSE)
+* R² Score
 
-# 2D indexing
-m = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
+to evaluate the regression model.
 
-print("\nElement at (1,2):", m[1, 2])
-print("Second column:", m[:, 1])
-print("First two rows:\n", m[0:2, :])
+---
 
-# Boolean masking & Fancy indexing
-scores = np.array([85, 42, 91, 67, 73])
-passed = scores[scores >= 70]
+# 💻 Technologies Used
 
-print("\nPassed Scores:", passed)
-print("Fancy Indexing:", arr[[0, 3, 4]])
-
-
-# ==========================================
-# 2. PANDAS BASE PRACTICE
-# ==========================================
-
-# Create DataFrame
-df_demo = pd.DataFrame({
-    "Name": ["Alice", "Bob", "Charlie", "Diana"],
-    "Dept": ["IT", "HR", "IT", "HR"],
-    "Salary": [70000, 65000, 80000, 72000]
-})
-
-# Filtering
-it_team = df_demo[df_demo["Dept"] == "IT"]
-high_pay = df_demo[df_demo["Salary"] > 70000]
-
-# Sorting
-sorted_df = df_demo.sort_values(
-    "Salary",
-    ascending=False
-)
-
-# New Column
-df_demo["Bonus"] = df_demo["Salary"] * 0.1
-
-# Aggregation
-dept_avg = df_demo.groupby("Dept")["Salary"].mean()
-
-print("\n--- Department Average Salary ---")
-print(dept_avg)
-
-# Clean DataFrame columns
-df_demo = (
-    df_demo
-    .drop(columns=["Bonus"])
-    .rename(columns={"Dept": "Department"})
-)
-
-
-# ==========================================
-# 3. DATA CLEANING & ANALYSIS WORKFLOW
-# ==========================================
-
-file_path = "retail_store_sales.csv"
-
-if os.path.exists(file_path):
-
-    # Load dataset
-    df = pd.read_csv(file_path)
-
-    # Standardize column headers
-    df.columns = (
-        df.columns
-        .str.strip()
-        .str.lower()
-        .str.replace(" ", "_")
-    )
-
-    print("\n--- Dataset Summary ---")
-    df.info()
-
-    print("\n--- Statistical Overview ---")
-    print(df.describe())
-
-    # Missing values
-    missing_pct = df.isnull().mean() * 100
-
-    print("\n--- Missing Value Percentage ---")
-    print(missing_pct)
-
-    # Duplicate rows
-    duplicates = df[df.duplicated()]
-
-    print(f"\nDuplicate Rows Found: {len(duplicates)}")
-
-    # Remove unnecessary column
-    df_cleaned = df.drop(
-        columns=["transaction_id"],
-        errors="ignore"
-    )
-
-    # Fill missing item conditionally
-    condition = (
-        (df_cleaned["item"].isna()) &
-        (df_cleaned["price_per_unit"] == 33.5) &
-        (df_cleaned["category"] == "Furniture")
-    )
-
-    df_cleaned.loc[
-        condition,
-        "item"
-    ] = "Item_20_FUR"
-
-    # View updated records
-    target_items = df_cleaned[
-        (df_cleaned["price_per_unit"] == 33.5) &
-        (df_cleaned["category"] == "Furniture")
-    ]
-
-    print("\n--- Updated Targeted Records ---")
-    print(target_items)
-
-else:
-    print(
-        f"\nNote: '{file_path}' not found. "
-        "Skipping file read steps."
-    )
-
-
-# ==========================================
-# 4. VISUALIZATIONS
-# ==========================================
-
-# Chart 1: Exam Score Distribution
-plt.figure(figsize=(8, 4))
-
-data = np.random.normal(70, 10, 1000)
-
-plt.hist(
-    data,
-    bins=17,
-    edgecolor="#4A5568",
-    alpha=0.7,
-    color="#4FD1C5"
-)
-
-plt.axvline(
-    data.mean(),
-    color="#E53E3E",
-    linestyle="--",
-    linewidth=2,
-    label=f"Mean: {data.mean():.2f}"
-)
-
-plt.title(
-    "Exam Score Distribution",
-    fontsize=12,
-    pad=10
-)
-
-plt.xlabel("Score")
-plt.ylabel("Frequency")
-plt.legend()
-
-plt.tight_layout()
-plt.show()
-
-
-# Chart 2: Trigonometric Functions
-plt.figure(figsize=(8, 4))
-
-x = np.linspace(0, 10, 100)
-
-plt.plot(
-    x,
-    np.sin(x),
-    label="sin(x)",
-    linewidth=2
-)
-
-plt.plot(
-    x,
-    np.cos(x),
-    label="cos(x)",
-    linewidth=2,
-    linestyle="--"
-)
-
-plt.title(
-    "Trigonometric Functions",
-    fontsize=12,
-    pad=10
-)
-
-plt.xlabel("x")
-plt.ylabel("y")
-
-plt.grid(
-    True,
-    linestyle=":",
-    alpha=0.6
-)
-
-plt.legend()
-
-plt.tight_layout()
-plt.show()
-```
+| Technology   | Purpose                   |
+| ------------ | ------------------------- |
+| Python       | Programming               |
+| NumPy        | Numerical computing       |
+| Pandas       | Data manipulation         |
+| Matplotlib   | Data visualization        |
+| Seaborn      | Statistical visualization |
+| Scikit-learn | Machine Learning          |
 
 ---
 
 # 📂 Project Structure
 
 ```text
-python-data-analysis/
+python-data-science-machine-learning/
 │
 ├── 📄 README.md
-├── 🐍 data_analysis.py
+├── 🐍 data_science_machine_learning.py
 ├── 📊 retail_store_sales.csv
 └── 📦 requirements.txt
 ```
@@ -378,13 +208,13 @@ python-data-analysis/
 Clone the repository:
 
 ```bash
-git clone github.com/uzairghole
+git clone https://github.com/uzairghole/python-data-science-machine-learning.git
 ```
 
 Move into the project folder:
 
 ```bash
-cd python-data-analysis
+cd python-data-science-machine-learning
 ```
 
 Install the required libraries:
@@ -404,6 +234,7 @@ numpy
 pandas
 matplotlib
 seaborn
+scikit-learn
 ```
 
 ---
@@ -411,19 +242,21 @@ seaborn
 # ▶️ Run the Project
 
 ```bash
-python data_analysis.py
+python data_science_machine_learning.py
 ```
+
+Make sure `retail_store_sales.csv` is in the same folder as the Python program.
 
 ---
 
-# 📊 Data Analysis Workflow
+# 📊 Data Science Workflow
 
 ```text
         📂 DATASET
             │
             ▼
       ┌──────────────┐
-      │  Load Data   │
+      │  Data Load   │
       └──────┬───────┘
              │
              ▼
@@ -444,6 +277,16 @@ python data_analysis.py
              ▼
       ┌──────────────┐
       │  Visualize   │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │    Model     │
+      └──────┬───────┘
+             │
+             ▼
+      ┌──────────────┐
+      │  Evaluate    │
       └──────┬───────┘
              │
              ▼
@@ -493,6 +336,17 @@ VISUALIZATION
 ├── Line Plot
 ├── Sine Function
 └── Cosine Function
+
+
+MACHINE LEARNING
+│
+├── Features & Labels
+├── Train-Test Split
+├── Linear Regression
+├── Prediction
+├── K-Means Clustering
+├── MSE
+└── R² Score
 ```
 
 ---
@@ -503,42 +357,75 @@ Through this project, I practiced how to:
 
 * Work with NumPy arrays
 * Manipulate data using Pandas
-* Load CSV datasets
-* Inspect dataset structure
+* Load and inspect CSV datasets
 * Identify missing values
 * Detect duplicate records
-* Clean unnecessary data
-* Perform conditional data updates
-* Create statistical visualizations
-* Visualize mathematical functions
-* Build a basic data analysis workflow
+* Clean and transform data
+* Perform basic data analysis
+* Create data visualizations
+* Understand the Data Science lifecycle
+* Separate features and labels
+* Split data into training and testing sets
+* Build a Linear Regression model
+* Make predictions
+* Apply K-Means clustering
+* Evaluate regression models using MSE and R²
 
 ---
 
-# 🚀 Future Plans
+# 🚀 Future Learning Plans
 
 * [ ] Advanced Pandas
-* [ ] Missing-value handling techniques
-* [ ] Data type conversion
+* [ ] Advanced Data Cleaning
+* [ ] Data Type Conversion
 * [ ] Merge and Join
 * [ ] Pivot Tables
 * [ ] Exploratory Data Analysis
 * [ ] Advanced Seaborn
 * [ ] Statistical Analysis
-* [ ] Data Analysis Dashboards
-* [ ] Machine Learning Projects
+* [ ] Feature Engineering
+* [ ] Classification
+* [ ] Decision Trees
+* [ ] Random Forest
+* [ ] Model Evaluation
+* [ ] Real-World Machine Learning Projects
+* [ ] Data Science Projects
 
 ---
 
-# ⭐ Repository Goal
+# ⭐ Project Goal
 
-> **Learn → Practice → Analyze → Visualize → Build Projects**
+```text
+Learn
+  ↓
+Practice
+  ↓
+Analyze
+  ↓
+Visualize
+  ↓
+Model
+  ↓
+Evaluate
+  ↓
+Build Projects
+```
+
+---
+
+# 👨‍💻 Author
+
+**Uzair Ghole**
+
+BSc IT Student | Aspiring Data Science Professional
+
+🔗 GitHub: https://github.com/uzairghole
 
 ---
 
 <p align="center">
 
-### 💻 Learn • Practice • Analyze • Build
+### 💻 Learn • Practice • Analyze • Visualize • Build
 
 </p>
 
@@ -547,14 +434,3 @@ Through this project, I practiced how to:
 **🐍 Python → 🔢 NumPy → 🐼 Pandas → 🧹 Data Cleaning → 📊 Visualization → 🔍 Data Analysis → 🤖 Machine Learning**
 
 </p>
-
----
-
-👨‍💻 Author
-
-Uzair Ghole
-
-Python Learner • Data Analysis Enthusiast
-
-🔗 GitHub: "github.com/uzairghole" (https://github.com/uzairghole)
-
