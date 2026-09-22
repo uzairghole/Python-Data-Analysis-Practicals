@@ -1,33 +1,41 @@
-# 🐍 Python Data Science & Machine Learning
+# 🤖 AI Course Daily Coursework
 
-A practical Python project for learning and practicing **Data Science and Machine Learning** concepts using NumPy, Pandas, Matplotlib, Seaborn, and Scikit-learn.
+> **Python • Data Science • Machine Learning**
 
-## 📖 Project Introduction
+This repository contains my **daily practical work, coding exercises, and learning notes** from my AI course at **Hirwal Education Trust**.
 
-This project contains my practical Python programs covering the basic workflow of Data Science.
-
-The code starts with **NumPy** for numerical operations and array handling, followed by **Pandas** for creating, filtering, sorting, and analyzing data. It also includes basic **data cleaning**, **CSV dataset handling**, and **data visualization** using Matplotlib.
-
-The project then moves into basic **Machine Learning** concepts using Scikit-learn, including Linear Regression, K-Means Clustering, train-test splitting, prediction, and model evaluation.
+The coursework focuses on building a foundation in Python-based Data Science and Machine Learning through hands-on programs and examples.
 
 ---
 
-## 🧩 Code Explanation
+## 📖 About
 
-### 1. NumPy
+The course work starts with fundamental Python libraries used in Data Science and gradually introduces Machine Learning concepts.
 
-NumPy is used for working with numerical data and arrays.
+The programs in this repository cover:
 
-The code demonstrates:
+* Numerical operations with **NumPy**
+* Data manipulation with **Pandas**
+* Basic **data cleaning**
+* Working with **CSV datasets**
+* Data analysis
+* Data visualization
+* Data Science lifecycle
+* Linear Regression
+* K-Means Clustering
+* Train-Test Split
+* Model prediction
+* Model evaluation
 
-* Creating NumPy arrays
-* Creating zeros and ones
-* `arange()` and `linspace()`
-* Checking array shape and dimensions
-* Reshaping arrays
-* Indexing and slicing
-* Boolean masking
-* Fancy indexing
+This repository is mainly maintained as a **record of my regular AI course practice and progress**.
+
+---
+
+## 🧠 What I Practiced
+
+### 🔢 NumPy
+
+Practiced basic array operations and numerical computing.
 
 ```python
 import numpy as np
@@ -38,23 +46,23 @@ print(arr.shape)
 print(arr[1:4])
 ```
 
-Here, the array is created using NumPy. The code then checks its shape and extracts values using slicing.
+**Concepts:**
+
+* Arrays
+* Array properties
+* Reshaping
+* Indexing
+* Slicing
+* Boolean masking
+* Fancy indexing
+* `arange()`
+* `linspace()`
 
 ---
 
-### 2. Pandas
+### 🐼 Pandas
 
-Pandas is used for working with structured data in the form of DataFrames.
-
-The code demonstrates:
-
-* Creating DataFrames
-* Filtering rows
-* Sorting data
-* Creating new columns
-* Grouping data
-* Calculating averages
-* Renaming columns
+Practiced working with structured data using DataFrames.
 
 ```python
 import pandas as pd
@@ -67,24 +75,22 @@ df = pd.DataFrame({
 print(df)
 ```
 
-The code creates a simple DataFrame containing names and salaries. Pandas is then used to perform different data operations.
+**Concepts:**
+
+* DataFrames
+* Filtering
+* Sorting
+* GroupBy
+* Aggregation
+* Creating columns
+* Renaming columns
+* CSV files
 
 ---
 
-### 3. Data Cleaning
+### 🧹 Data Cleaning
 
-The project uses a **retail store sales CSV dataset** for basic data cleaning and analysis.
-
-The code performs:
-
-* CSV file loading
-* Column name standardization
-* Dataset information checking
-* Statistical summary
-* Missing-value checking
-* Duplicate checking
-* Removing unnecessary columns
-* Updating missing values based on conditions
+Practiced preparing raw data before analysis.
 
 ```python
 df = pd.read_csv("retail_store_sales.csv")
@@ -93,21 +99,20 @@ print(df.isnull().sum())
 print(df.duplicated().sum())
 ```
 
-This helps identify missing and duplicate data before further analysis.
+**Concepts:**
+
+* Loading datasets
+* Column standardization
+* Missing values
+* Duplicate records
+* Removing unnecessary columns
+* Conditional data updates
 
 ---
 
-### 4. Data Visualization
+### 📊 Data Visualization
 
-Matplotlib is used to create simple graphs and understand data visually.
-
-The project includes:
-
-* Histogram
-* Exam score distribution
-* Mean value line
-* Sine graph
-* Cosine graph
+Practiced representing data using graphs.
 
 ```python
 import matplotlib.pyplot as plt
@@ -117,13 +122,94 @@ plt.title("Score Distribution")
 plt.show()
 ```
 
-The histogram shows how values are distributed across different score ranges.
+**Visualizations practiced:**
+
+* Histogram
+* Score distribution
+* Mean line
+* Sine graph
+* Cosine graph
+* Labels
+* Legends
+* Grid
 
 ---
 
-### 5. Data Science Lifecycle
+## 🤖 Machine Learning
 
-The project also demonstrates the basic Data Science lifecycle:
+The coursework introduces basic Machine Learning using **Scikit-learn**.
+
+### Linear Regression
+
+Used to understand numerical prediction.
+
+```python
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X, y)
+
+print(model.predict([[900]]))
+```
+
+Practiced examples include:
+
+* House price prediction
+* Simple numerical prediction
+* Student marks prediction
+
+---
+
+### K-Means Clustering
+
+Practiced basic unsupervised learning.
+
+```python
+from sklearn.cluster import KMeans
+
+model = KMeans(n_clusters=2, random_state=42)
+model.fit(X)
+
+print(model.labels_)
+```
+
+This demonstrates how data points can be grouped into clusters.
+
+---
+
+### Train-Test Split
+
+Practiced dividing data into training and testing sets.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+
+The training data is used to build the model, while the testing data is used to check its performance.
+
+---
+
+### Model Evaluation
+
+Practiced evaluating regression models using:
+
+* **Mean Squared Error (MSE)**
+* **R² Score**
+
+```python
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+```
+
+---
+
+## 🔄 Data Science Lifecycle
+
+The coursework also covers the basic Data Science process:
 
 ```text
 Problem Definition
@@ -143,105 +229,25 @@ Deployment
 Monitoring
 ```
 
-This represents the general process followed when solving a Data Science problem.
+---
+
+## 🛠️ Tools & Libraries
+
+| Tool / Library | Used For                  |
+| -------------- | ------------------------- |
+| Python         | Programming               |
+| NumPy          | Numerical Computing       |
+| Pandas         | Data Analysis             |
+| Matplotlib     | Visualization             |
+| Seaborn        | Statistical Visualization |
+| Scikit-learn   | Machine Learning          |
 
 ---
 
-## 🤖 Machine Learning
-
-The project includes basic Machine Learning examples using **Scikit-learn**.
-
-### Linear Regression
-
-Linear Regression is used to predict a numerical value based on input data.
-
-The project includes examples such as:
-
-* House price prediction
-* Simple numerical prediction
-* Student marks prediction
-
-```python
-from sklearn.linear_model import LinearRegression
-
-model = LinearRegression()
-model.fit(X, y)
-
-prediction = model.predict([[900]])
-print(prediction)
-```
-
-The model learns the relationship between `X` and `y` and then predicts a value for new input data.
-
----
-
-### K-Means Clustering
-
-K-Means is used for basic **unsupervised learning**.
-
-```python
-from sklearn.cluster import KMeans
-
-model = KMeans(n_clusters=2, random_state=42)
-model.fit(X)
-
-print(model.labels_)
-```
-
-The algorithm groups similar data points into clusters.
-
----
-
-### Train-Test Split
-
-The project divides data into training and testing sets.
-
-```python
-from sklearn.model_selection import train_test_split
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-```
-
-The training data is used to build the model, while the testing data is used to check its performance.
-
----
-
-### Model Evaluation
-
-The student marks prediction example evaluates the model using:
-
-* **Mean Squared Error (MSE)** — measures prediction error.
-* **R² Score** — shows how well the model explains the variation in the target values.
-
-```python
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-
-print("MSE:", mse)
-print("R2 Score:", r2)
-```
-
----
-
-## 🛠️ Technologies Used
-
-| Technology   | Purpose              |
-| ------------ | -------------------- |
-| Python       | Programming          |
-| NumPy        | Numerical operations |
-| Pandas       | Data analysis        |
-| Matplotlib   | Visualization        |
-| Seaborn      | Data visualization   |
-| Scikit-learn | Machine Learning     |
-
----
-
-## 📂 Project Structure
+## 📁 Repository Structure
 
 ```text
-python-data-science-machine-learning/
+AI-Course-Daily-Work/
 │
 ├── data_science_machine_learning.py
 ├── retail_store_sales.csv
@@ -251,48 +257,63 @@ python-data-science-machine-learning/
 
 ---
 
-## ⚙️ Installation
+## 📦 Requirements
+
+```text
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+```
+
+Install the required libraries:
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn
 ```
 
-Run the program:
-
-```bash
-python data_science_machine_learning.py
-```
-
 ---
 
-## 🎯 Learning Outcome
-
-By completing this project, I practiced the basic workflow of:
+## 📈 Learning Progress
 
 ```text
 Python
-   ↓
+  ↓
 NumPy
-   ↓
+  ↓
 Pandas
-   ↓
+  ↓
 Data Cleaning
-   ↓
+  ↓
 Data Analysis
-   ↓
+  ↓
 Visualization
-   ↓
+  ↓
 Machine Learning
-   ↓
+  ↓
 Model Evaluation
 ```
 
 ---
 
-## 👨‍💻 Author
+## 🎓 Course Information
 
-**Uzair Ghole**
+**Course:** Artificial Intelligence
+**Institute:** Hirwal Education Trust
+**Student:** Uzair Ghole
+**Program:** BSc IT
 
-BSc IT Student | Aspiring Data Science Professional
+---
 
-[GitHub](https://github.com/uzairghole)
+## 📝 Note
+
+This repository represents **coursework and daily practical learning**, not a standalone personal project. The programs are developed and maintained as part of my ongoing AI course practice.
+
+---
+
+<p align="center">
+
+**Learn • Practice • Understand • Improve**
+
+</p>
